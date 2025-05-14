@@ -7,11 +7,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-
-  console.log();
-});
-
-
   console.log(`Aplikasi berjalan di http://localhost:${port}`);
 });
 
