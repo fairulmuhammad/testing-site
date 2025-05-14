@@ -1,1 +1,17 @@
+<<<<<<< HEAD
 [H[2J[3J
+=======
+{
+  "name": "devops-ujian-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app for DevOps testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Running tests...\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+>>>>>>> ae1eddf625085917d38d6056a3c43d1c1490feab
