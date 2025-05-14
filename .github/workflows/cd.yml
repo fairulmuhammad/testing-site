@@ -1,22 +1,30 @@
 name: CD Pipeline
 on:
   push:
-    branches: [main]  # Trigger saat push ke branch main
+    branches: [main]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest  # Gunakan runner Windows
+    defaults:
+      run:
+        shell: powershell  # Pakai PowerShell sebagai default
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Setup Docker
+        run: |
+          # Pastikan Docker Desktop sudah terinstall dan service berjalan
+          Start-Service -Name "Docker" -ErrorAction SilentlyContinue
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.7.4
 
-      - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      - name: Terraform Init & Apply
+        run: |
+          terraform init
+          terraform apply -auto-approve
