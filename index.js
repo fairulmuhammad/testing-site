@@ -7,11 +7,11 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-<<<<<<< HEAD
+
   console.log();
 });
 
-=======
+
   console.log(`Aplikasi berjalan di http://localhost:${port}`);
 });
->>>>>>> ae1eddf625085917d38d6056a3c43d1c1490feab
+
